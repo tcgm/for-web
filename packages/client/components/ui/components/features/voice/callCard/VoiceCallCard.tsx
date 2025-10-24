@@ -3,9 +3,11 @@ import {
   Match,
   Show,
   Switch,
+  batch,
   createContext,
   createEffect,
   createSignal,
+  on,
   onCleanup,
   useContext,
 } from "solid-js";
@@ -35,9 +37,9 @@ type State =
       channel: Channel;
     };
 
-const callCardContext = createContext<
-  (channel?: Channel, state?: { x: number; y: number; width: number }) => void
->(null!);
+type NewState = { channel: Channel; x: number; y: number; width: number };
+
+const callCardContext = createContext<(state?: NewState) => void>(null!);
 
 /**
  * Voice call card context
@@ -49,6 +51,9 @@ export function VoiceCallCardContext(props: { children: JSX.Element }) {
     type: "floating",
     corner: "bottom-right",
   });
+
+  const [moving, setMoving] = createSignal<boolean>();
+  const [offset, setOffset] = createSignal({ x: 0, y: 0 });
 
   function position() {
     const position = state();
@@ -66,16 +71,16 @@ export function VoiceCallCardContext(props: { children: JSX.Element }) {
         return {
           "--width": "280px",
           "--height": "158px",
-          "--offset-x": "32px",
-          "--offset-y": "96px",
+          "--padding-x": "32px",
+          "--padding-y": "96px",
           transform: `translate(${
             position.corner === "top-left" || position.corner === "bottom-left"
-              ? "var(--offset-x)"
-              : "calc(100vw - var(--offset-x) - var(--width))"
+              ? "calc(var(--padding-x) + var(--offset-x))"
+              : "calc(100vw - var(--padding-x) - var(--width) + var(--offset-x))"
           }, ${
             position.corner === "top-left" || position.corner === "top-right"
-              ? "var(--offset-y)"
-              : "calc(100vh - var(--offset-y) - var(--height))"
+              ? "calc(var(--padding-y) + var(--offset-y))"
+              : "calc(100vh - var(--padding-y) - var(--height) + var(--offset-y))"
           })`,
           width: "var(--width)",
           height: "var(--height)",
@@ -83,25 +88,84 @@ export function VoiceCallCardContext(props: { children: JSX.Element }) {
     }
   }
 
+  createEffect(
+    on(moving, (moving) => {
+      if (moving) {
+        const controller = new AbortController();
+
+        document.addEventListener(
+          "mousemove",
+          (event) => {
+            const position = state();
+            if (position.type !== "floating") return controller.abort();
+
+            setOffset((pos) => ({
+              x: pos.x + event.movementX,
+              y: pos.y + event.movementY,
+            }));
+          },
+          { signal: controller.signal },
+        );
+
+        document.addEventListener(
+          "mouseup",
+          (event) => {
+            batch(() => {
+              setMoving(false);
+
+              const left = event.clientX < window.outerWidth / 2;
+              const top = event.clientY < window.outerHeight / 2;
+
+              setState({
+                type: "floating",
+                corner: left
+                  ? top
+                    ? "top-left"
+                    : "bottom-left"
+                  : top
+                    ? "top-right"
+                    : "bottom-right",
+              });
+            });
+          },
+          { signal: controller.signal },
+        );
+
+        onCleanup(() => controller.abort());
+      }
+    }),
+  );
+
+  function updateState(state?: NewState) {
+    if (state) {
+      setState({
+        type: "fixed",
+        width: state.width,
+        x: state.x,
+        y: state.y,
+        channel: state.channel,
+      });
+    } else {
+      setState({
+        type: "floating",
+        corner: "bottom-right",
+      });
+    }
+  }
+
+  function updateStateWithTransition(state?: NewState) {
+    // no clue if this works
+
+    if (!document.startViewTransition) {
+      updateState(state);
+      return;
+    }
+
+    document.startViewTransition(() => updateState(state));
+  }
+
   return (
-    <callCardContext.Provider
-      value={(channel, state) => {
-        if (channel && state) {
-          setState({
-            type: "fixed",
-            width: state.width,
-            x: state.x,
-            y: state.y,
-            channel,
-          });
-        } else {
-          setState({
-            type: "floating",
-            corner: "bottom-right",
-          });
-        }
-      }}
-    >
+    <callCardContext.Provider value={updateStateWithTransition}>
       {props.children}
 
       <Portal ref={document.getElementById("floating")! as HTMLDivElement}>
@@ -109,11 +173,28 @@ export function VoiceCallCardContext(props: { children: JSX.Element }) {
           style={{
             position: "fixed",
             "z-index": 10,
-            transition: voice.room() && "var(--transitions-medium) all",
-            "transition-timing-function": "ease-in-out",
+            "transition-duration": moving() ? ".2s" : voice.room() && ".3s",
+            "transition-property": "all",
+            "transition-timing-function": moving()
+              ? "cubic-bezier(0, 1.67, 0.85, 0.8)"
+              : "cubic-bezier(1, 0, 0, 1)",
             ...position(),
             "pointer-events": "none",
+            cursor: moving() ? "grabbing" : "grab",
+            "--offset-x": `${moving() ? offset().x : 0}px`,
+            "--offset-y": `${moving() ? offset().y : 0}px`,
           }}
+          // dragging logic for mice
+          onMouseDown={() => {
+            if (state().type === "floating") {
+              batch(() => {
+                setMoving(true);
+                setOffset({ x: 0, y: 0 });
+              });
+            }
+          }}
+          // dragging logic for touch input
+          // todo
         >
           <Switch>
             <Match when={state().type === "fixed"}>
@@ -155,10 +236,11 @@ export function VoiceChannelCallCardMount(props: { channel: Channel }) {
 
     if (rect?.left && w) {
       if (canUpdate) {
-        updateSize(props.channel, {
+        updateSize({
           x: rect.left,
           y: rect.top,
           width: w,
+          channel: props.channel,
         });
       } else {
         updateSize();
