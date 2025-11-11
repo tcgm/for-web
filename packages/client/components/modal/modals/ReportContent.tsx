@@ -180,14 +180,17 @@ export function ReportContentModal(
             )}
           </div>
 
-          <Form2.TextField.Select control={group.controls.category}>
+          <Form2.FloatingSelect
+            control={group.controls.category}
+            label={t`Select a reason`}
+          >
             <MenuItem value="">
               <Trans>Please select a reason</Trans>
             </MenuItem>
             <For each={reasons}>
               {(value) => <MenuItem value={value}>{strings[value]}</MenuItem>}
             </For>
-          </Form2.TextField.Select>
+          </Form2.FloatingSelect>
 
           {/* TODO: use TextEditor? */}
           <Form2.TextField

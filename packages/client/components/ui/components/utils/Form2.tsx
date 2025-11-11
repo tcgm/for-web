@@ -14,7 +14,7 @@ import { VirtualContainer } from "@minht11/solid-virtual-container";
 import { css } from "styled-system/css";
 import { styled } from "styled-system/jsx";
 
-import { Button, Checkbox, Radio2, Text, TextField } from "../design";
+import { Button, Checkbox, FloatingSelect, Radio2, Text, TextField } from "../design";
 import { TextEditor2 } from "../features/texteditor/TextEditor2";
 
 import { FileInput } from "./files";
@@ -106,6 +106,39 @@ FormTextField.Select = (
   return (
     <>
       <TextField.Select
+        {...remote}
+        value={local.control.value}
+        onChange={(e) => {
+          local.control.setValue(e.currentTarget.value);
+          local.control.markDirty(true);
+        }}
+        required={local.control.isRequired}
+        disabled={local.control.isDisabled}
+      />
+
+      <Show when={local.control.isTouched && !local.control.isValid}>
+        <For each={Object.keys(local.control.errors!)}>
+          {(errorMsg: string) => <small>{errorMsg}</small>}
+        </For>
+      </Show>
+    </>
+  );
+};
+
+/**
+ * Form wrapper for FloatingSelect
+ * Use this instead of TextField.Select in modals to avoid positioning issues
+ */
+const FormFloatingSelect = (
+  props: {
+    control: IFormControl<string>;
+  } & ComponentProps<typeof FloatingSelect>,
+) => {
+  const [local, remote] = splitProps(props, ["control"]);
+
+  return (
+    <>
+      <FloatingSelect
         {...remote}
         value={local.control.value}
         onChange={(e) => {
@@ -425,6 +458,7 @@ function useSubmitHandler(
 
 export const Form2 = {
   TextField: FormTextField,
+  FloatingSelect: FormFloatingSelect,
   TextEditor: FormTextEditor,
   FileInput: FormFileInput,
   Checkbox: FormCheckbox,
