@@ -346,22 +346,6 @@ export function AppearanceMenu() {
       </TextField.Select>
 
       <Column>
-        <Text class="title" size="small">
-          <Trans>Chat Input</Trans>
-        </Text>
-
-        <Checkbox
-          checked={state.settings.getValue("appearance:show_send_button")}
-          onChange={(event) =>
-            state.settings.setValue(
-              "appearance:show_send_button",
-              event.currentTarget.checked,
-            )
-          }
-        >
-          <Trans>Show send message button</Trans>
-        </Checkbox>
-
         <Text class="label">
           <Trans>Emoji Pack (affects your messages only)</Trans>
         </Text>

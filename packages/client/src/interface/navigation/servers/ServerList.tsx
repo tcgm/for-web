@@ -112,6 +112,10 @@ export const ServerList = (props: Props) => {
       .length;
   });
 
+  const showUnreadConversations = createMemo(() => {
+    return state.settings.getValue("accessibility:show_unread_conversations")
+  });
+
   // Ref for floating menu
   const [menuButton, setMenuButton] = createSignal<HTMLDivElement>();
 
@@ -135,7 +139,7 @@ export const ServerList = (props: Props) => {
             fallback={<MdHome />}
             holepunch={homeNotifications() ? "top-right" : undefined}
             overlay={
-              <Show when={homeNotifications()}>
+              <Show when={showUnreadConversations() && homeNotifications()}>
                 <Unreads.Graphic
                   unread={homeNotifications() !== 0}
                   count={homeNotifications()}
@@ -172,39 +176,41 @@ export const ServerList = (props: Props) => {
             <Symbol>history</Symbol>
           </a>
         </Tooltip>
-        <For each={props.unreadConversations.slice(0, 9)}>
-          {(conversation) => (
-            <Tooltip placement="right" content={conversation.displayName}>
-              <a
-                class={entryContainer()}
-                use:floating={props.menuGenerator(conversation)}
-                href={`/channel/${conversation.id}`}
-              >
-                <Avatar
-                  size={42}
-                  // TODO: fix this
-                  src={conversation.iconURL}
-                  holepunch={conversation.unread ? "top-right" : "none"}
-                  overlay={
-                    <>
-                      <Show when={conversation.unread}>
-                        <Unreads.Graphic
-                          count={conversation.mentions?.size ?? 0}
-                          unread
-                        />
-                      </Show>
-                    </>
-                  }
-                  fallback={
-                    conversation.name ?? conversation.recipient?.username
-                  }
-                  interactive
-                />
-              </a>
-            </Tooltip>
-          )}
-        </For>
-        <Show when={props.unreadConversations.length > 9}>
+        <Show when={showUnreadConversations()}>
+          <For each={props.unreadConversations.slice(0, 9)}>
+            {(conversation) => (
+              <Tooltip placement="right" content={conversation.displayName}>
+                <a
+                  class={entryContainer()}
+                  use:floating={props.menuGenerator(conversation)}
+                  href={`/channel/${conversation.id}`}
+                >
+                  <Avatar
+                    size={42}
+                    // TODO: fix this
+                    src={conversation.iconURL}
+                    holepunch={conversation.unread ? "top-right" : "none"}
+                    overlay={
+                      <>
+                        <Show when={conversation.unread}>
+                          <Unreads.Graphic
+                            count={conversation.mentions?.size ?? 0}
+                            unread
+                          />
+                        </Show>
+                      </>
+                    }
+                    fallback={
+                      conversation.name ?? conversation.recipient?.username
+                    }
+                    interactive
+                  />
+                </a>
+              </Tooltip>
+            )}
+          </For>
+        </Show>
+        <Show when={showUnreadConversations() && props.unreadConversations.length > 9}>
           <a class={entryContainer()} href={`/`}>
             <Avatar
               size={42}

@@ -21,6 +21,7 @@ import MdScience from "@material-design-icons/svg/outlined/science.svg?component
 import MdSmartToy from "@material-design-icons/svg/outlined/smart_toy.svg?component-solid";
 import MdVerifiedUser from "@material-design-icons/svg/outlined/verified_user.svg?component-solid";
 import MdWorkspacePremium from "@material-design-icons/svg/outlined/workspace_premium.svg?component-solid";
+import MdAccessibility from "@material-design-icons/svg/outlined/accessibility.svg?component-solid"
 
 import pkg from "../../../../../../package.json";
 
@@ -33,6 +34,7 @@ import Native from "./user/Native";
 import { Sessions } from "./user/Sessions";
 import { AccountCard } from "./user/_AccountCard";
 import { AppearanceMenu } from "./user/appearance";
+import Accessibility  from "./user/Accessibility";
 import { MyBots, ViewBot } from "./user/bots";
 import { EditProfile } from "./user/profile";
 import { EditSubscription } from "./user/subscriptions";
@@ -76,6 +78,8 @@ const Config: SettingsConfiguration<{ server: Server }> = {
         return <AppearanceMenu />;
       case "advanced":
         return <AdvancedSettings />;
+      case "accessibility":
+        return <Accessibility />;
       case "profile":
         return <EditProfile />;
       case "sessions":
@@ -218,11 +222,11 @@ const Config: SettingsConfiguration<{ server: Server }> = {
               icon: <MdPalette {...iconSize(20)} />,
               title: <Trans>Appearance</Trans>,
             },
-            // {
-            //   id: "accessibility",
-            //   icon: <MdAccessibility {...iconSize(20)} />,
-            //   title: t("app.settings.pages.accessibility.title"),
-            // },
+            {
+              id: "accessibility",
+               icon: <MdAccessibility {...iconSize(20)} />,
+              title: <Trans>Accessibility</Trans>,
+            },
             // {
             //   id: "plugins",
             //   icon: <MdExtension {...iconSize(20)} />,
