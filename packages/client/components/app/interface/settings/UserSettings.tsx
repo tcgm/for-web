@@ -12,6 +12,7 @@ import { Symbol } from "@revolt/ui/components/utils/Symbol";
 
 import MdAccessibility from "@material-design-icons/svg/outlined/accessibility.svg?component-solid";
 import MdAccountCircle from "@material-design-icons/svg/outlined/account_circle.svg?component-solid";
+import MdCoffee from "@material-design-icons/svg/outlined/coffee.svg?component-solid";
 import MdLanguage from "@material-design-icons/svg/outlined/language.svg?component-solid";
 import MdLogout from "@material-design-icons/svg/outlined/logout.svg?component-solid";
 import MdMemory from "@material-design-icons/svg/outlined/memory.svg?component-solid";
@@ -184,11 +185,6 @@ const Config: SettingsConfiguration<{ server: Server }> = {
               icon: <MdRateReview {...iconSize(20)} />,
               title: <Trans>Feedback</Trans>,
             },
-            // {
-            //   href: "https://wiki.revolt.chat/notes/project/financial-support/",
-            //   icon: <MdLocalCafe {...iconSize(20)} />,
-            //   title: <Trans>Donate</Trans>,
-            // },
           ],
         },
         {
@@ -283,6 +279,11 @@ const Config: SettingsConfiguration<{ server: Server }> = {
               id: "advanced",
               icon: <MdScience {...iconSize(20)} />,
               title: <Trans>Advanced</Trans>,
+            },
+            {
+              href: "https://ko-fi.com/stoatchat",
+              icon: <MdCoffee {...iconSize(20)} />,
+              title: <Trans>Donate</Trans>,
             },
             {
               id: "logout",
