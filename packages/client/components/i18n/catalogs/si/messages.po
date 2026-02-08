@@ -268,6 +268,10 @@ msgstr ""
 msgid "Accept friend request"
 msgstr "මිතුරු ඉල්ලීම පිළිගන්න"
 
+#: components/app/interface/settings/UserSettings.tsx:224
+msgid "Accessibility"
+msgstr ""
+
 #: components/modal/modals/PolicyChange.tsx:44
 msgid "Acknowledge"
 msgstr ""
@@ -310,7 +314,7 @@ msgstr ""
 msgid "Admin Panel"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:277
+#: components/app/interface/settings/UserSettings.tsx:281
 msgid "Advanced"
 msgstr "උසස්"
 
@@ -341,6 +345,10 @@ msgstr ""
 msgid "Already friends with this user."
 msgstr "දැනටමත් ඔහු/ඇය සමඟ හිතවත්ය."
 
+#: components/app/interface/settings/user/Accessibility.tsx:42
+msgid "Always show Send Message button"
+msgstr ""
+
 #: components/app/interface/settings/user/Language.tsx:143
 #: components/app/interface/settings/user/Language.tsx:163
 msgid "American (MM/DD/YYYY)"
@@ -355,7 +363,7 @@ msgstr ""
 msgid "An internal error occurred. ({0})"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:215
+#: components/app/interface/settings/UserSettings.tsx:219
 #: components/app/interface/settings/user/Sync.tsx:34
 msgid "Appearance"
 msgstr "පෙනුම"
@@ -602,7 +610,7 @@ msgstr ""
 msgid "Channels"
 msgstr "නාලිකා"
 
-#: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:380
+#: components/app/interface/settings/user/Accessibility.tsx:18
 msgid "Chat Input"
 msgstr ""
 
@@ -630,7 +638,7 @@ msgstr ""
 msgid "Click to show spoiler"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:198
+#: components/app/interface/settings/UserSettings.tsx:202
 msgid "Client Settings"
 msgstr "අනුග්‍රාහක සැකසුම්"
 
@@ -1013,7 +1021,7 @@ msgstr ""
 msgid "Description provided by {0}"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:252
+#: components/app/interface/settings/UserSettings.tsx:256
 msgid "Desktop"
 msgstr ""
 
@@ -1072,7 +1080,7 @@ msgstr ""
 msgid "Don't notify others that you've left"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:282
+#: components/app/interface/settings/UserSettings.tsx:286
 msgid "Donate"
 msgstr ""
 
@@ -1161,7 +1169,7 @@ msgstr "ඊ-තැපෑල"
 msgid "Emoji Name"
 msgstr ""
 
-#: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:396
+#: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:380
 msgid "Emoji Pack (affects your messages only)"
 msgstr ""
 
@@ -1240,7 +1248,7 @@ msgstr ""
 msgid "Failed to verify!"
 msgstr "සත්‍යාපනයට නොහැකි විය!"
 
-#: components/app/interface/settings/UserSettings.tsx:182
+#: components/app/interface/settings/UserSettings.tsx:186
 #: components/app/interface/settings/user/Feedback.tsx:75
 msgid "Feedback"
 msgstr "ප්‍රතිපෝෂණය"
@@ -1412,6 +1420,10 @@ msgstr ""
 msgid "Idle"
 msgstr "නිෂ්ක්‍රීයයි"
 
+#: components/app/interface/settings/user/Accessibility.tsx:37
+msgid "If disabled, the Send Message button will only appear on mobile"
+msgstr ""
+
 #: components/modal/modals/ReportContent.tsx:66
 msgid "Illegal hacking or cracking"
 msgstr ""
@@ -1532,7 +1544,7 @@ msgstr ""
 msgid "Kick Members"
 msgstr "සාමාජිකයින්ට පයින් ගසන්න"
 
-#: components/app/interface/settings/UserSettings.tsx:241
+#: components/app/interface/settings/UserSettings.tsx:245
 #: components/app/interface/settings/user/Sync.tsx:52
 msgid "Language"
 msgstr "භාෂාව"
@@ -1598,7 +1610,7 @@ msgstr ""
 msgid "Log In"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:291
+#: components/app/interface/settings/UserSettings.tsx:295
 #: components/app/interface/settings/user/Sessions.tsx:168
 msgid "Log Out"
 msgstr "නික්මෙන්න"
@@ -1807,11 +1819,11 @@ msgstr "සාමාජිකයින් නිහඬ කරන්න"
 msgid "Mute Server"
 msgstr ""
 
-#: src/interface/navigation/servers/ServerList.tsx:235
+#: src/interface/navigation/servers/ServerList.tsx:245
 msgid "Muted"
 msgstr "නිහඬයි"
 
-#: src/interface/navigation/servers/ServerList.tsx:237
+#: src/interface/navigation/servers/ServerList.tsx:247
 #: components/app/menus/ServerContextMenu.tsx:186
 #: components/app/menus/shared/NotificationContextMenu.tsx:43
 msgid "Muted until <0/>"
@@ -1829,7 +1841,7 @@ msgstr "අන්‍යෝන්‍ය සමූහ"
 msgid "My Account"
 msgstr "මාගේ ගිණුම"
 
-#: components/app/interface/settings/UserSettings.tsx:177
+#: components/app/interface/settings/UserSettings.tsx:181
 msgid "My Bots"
 msgstr "මාගේ ස්වයංක්‍රමලේඛ"
 
@@ -1892,6 +1904,7 @@ msgstr ""
 
 #: components/app/menus/ServerContextMenu.tsx:238
 #: components/app/menus/shared/NotificationContextMenu.tsx:95
+#: components/app/interface/settings/user/Accessibility.tsx:47
 msgid "Notifications"
 msgstr "දැනුම්දීම්"
 
@@ -2057,7 +2070,7 @@ msgstr "රහස්‍යතා ප්‍රතිපත්තිය"
 msgid "Private Channel"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:162
+#: components/app/interface/settings/UserSettings.tsx:166
 msgid "Profile"
 msgstr "පැතිකඩ"
 
@@ -2419,7 +2432,7 @@ msgstr "සේවාදායකයේ නම"
 msgid "Server Roles"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:167
+#: components/app/interface/settings/UserSettings.tsx:171
 msgid "Sessions"
 msgstr "වාර"
 
@@ -2453,7 +2466,11 @@ msgid "Show corrections and suggestions as you type."
 msgstr ""
 
 #: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:392
-msgid "Show send message button"
+#~ msgid "Show send message button"
+#~ msgstr ""
+
+#: components/app/interface/settings/user/Accessibility.tsx:68
+msgid "Show unread conversations in server list"
 msgstr ""
 
 #: components/auth/src/flows/FlowLogin.tsx:57
@@ -2489,7 +2506,7 @@ msgstr ""
 msgid "Sounds"
 msgstr "ශබ්ද"
 
-#: components/app/interface/settings/UserSettings.tsx:272
+#: components/app/interface/settings/UserSettings.tsx:276
 msgid "Source Code"
 msgstr "ප්‍රභව කේතය"
 
@@ -2549,7 +2566,7 @@ msgstr "ප්‍රතිපෝෂණය යොමන්න"
 msgid "Submit to Discover"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:187
+#: components/app/interface/settings/UserSettings.tsx:191
 msgid "Subscriptions"
 msgstr ""
 
@@ -2814,7 +2831,7 @@ msgstr "පුද්ගලයා ඇමතුම හැරගියා"
 msgid "User Management"
 msgstr "පරිශීලක කළමනාකරණය"
 
-#: components/app/interface/settings/UserSettings.tsx:151
+#: components/app/interface/settings/UserSettings.tsx:155
 msgid "User Settings"
 msgstr "පරිශීලක සැකසුම්"
 
@@ -2863,7 +2880,7 @@ msgstr ""
 msgid "Verifying your account…"
 msgstr "ගිණුම සත්‍යාපනය වෙමින්…"
 
-#: components/app/interface/settings/UserSettings.tsx:123
+#: components/app/interface/settings/UserSettings.tsx:127
 #: components/app/interface/settings/user/Native.tsx:151
 msgid "Version:"
 msgstr ""
@@ -2900,7 +2917,7 @@ msgstr "ප්‍රතිසාධන කේත බලන්න"
 msgid "Viewing older messages"
 msgstr "පරණ පණිවිඩ දකිමින්"
 
-#: components/app/interface/settings/UserSettings.tsx:210
+#: components/app/interface/settings/UserSettings.tsx:214
 #: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:330
 msgid "Voice"
 msgstr ""

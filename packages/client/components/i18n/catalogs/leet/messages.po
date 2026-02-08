@@ -268,6 +268,10 @@ msgstr ""
 msgid "Accept friend request"
 msgstr "4CC3P7 F213ND 23QU357"
 
+#: components/app/interface/settings/UserSettings.tsx:224
+msgid "Accessibility"
+msgstr ""
+
 #: components/modal/modals/PolicyChange.tsx:44
 msgid "Acknowledge"
 msgstr ""
@@ -310,7 +314,7 @@ msgstr ""
 msgid "Admin Panel"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:277
+#: components/app/interface/settings/UserSettings.tsx:281
 msgid "Advanced"
 msgstr "4DV4NC3D"
 
@@ -341,6 +345,10 @@ msgstr ""
 msgid "Already friends with this user."
 msgstr "4L234DY F213ND5 W17H 7H15 U532."
 
+#: components/app/interface/settings/user/Accessibility.tsx:42
+msgid "Always show Send Message button"
+msgstr ""
+
 #: components/app/interface/settings/user/Language.tsx:143
 #: components/app/interface/settings/user/Language.tsx:163
 msgid "American (MM/DD/YYYY)"
@@ -355,7 +363,7 @@ msgstr ""
 msgid "An internal error occurred. ({0})"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:215
+#: components/app/interface/settings/UserSettings.tsx:219
 #: components/app/interface/settings/user/Sync.tsx:34
 msgid "Appearance"
 msgstr "4PP3424NC3"
@@ -602,7 +610,7 @@ msgstr ""
 msgid "Channels"
 msgstr "CH4NN3L5"
 
-#: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:380
+#: components/app/interface/settings/user/Accessibility.tsx:18
 msgid "Chat Input"
 msgstr ""
 
@@ -630,7 +638,7 @@ msgstr ""
 msgid "Click to show spoiler"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:198
+#: components/app/interface/settings/UserSettings.tsx:202
 msgid "Client Settings"
 msgstr "CL13N7 53771N65"
 
@@ -1013,7 +1021,7 @@ msgstr ""
 msgid "Description provided by {0}"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:252
+#: components/app/interface/settings/UserSettings.tsx:256
 msgid "Desktop"
 msgstr ""
 
@@ -1072,7 +1080,7 @@ msgstr ""
 msgid "Don't notify others that you've left"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:282
+#: components/app/interface/settings/UserSettings.tsx:286
 msgid "Donate"
 msgstr ""
 
@@ -1161,7 +1169,7 @@ msgstr "3M41L"
 msgid "Emoji Name"
 msgstr ""
 
-#: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:396
+#: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:380
 msgid "Emoji Pack (affects your messages only)"
 msgstr ""
 
@@ -1240,7 +1248,7 @@ msgstr ""
 msgid "Failed to verify!"
 msgstr "F41L3D 70 V321FY!"
 
-#: components/app/interface/settings/UserSettings.tsx:182
+#: components/app/interface/settings/UserSettings.tsx:186
 #: components/app/interface/settings/user/Feedback.tsx:75
 msgid "Feedback"
 msgstr "F33D84CK"
@@ -1412,6 +1420,10 @@ msgstr ""
 msgid "Idle"
 msgstr "1DL3"
 
+#: components/app/interface/settings/user/Accessibility.tsx:37
+msgid "If disabled, the Send Message button will only appear on mobile"
+msgstr ""
+
 #: components/modal/modals/ReportContent.tsx:66
 msgid "Illegal hacking or cracking"
 msgstr ""
@@ -1532,7 +1544,7 @@ msgstr ""
 msgid "Kick Members"
 msgstr "K1CK M3M8325"
 
-#: components/app/interface/settings/UserSettings.tsx:241
+#: components/app/interface/settings/UserSettings.tsx:245
 #: components/app/interface/settings/user/Sync.tsx:52
 msgid "Language"
 msgstr "L4N6U463"
@@ -1598,7 +1610,7 @@ msgstr ""
 msgid "Log In"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:291
+#: components/app/interface/settings/UserSettings.tsx:295
 #: components/app/interface/settings/user/Sessions.tsx:168
 msgid "Log Out"
 msgstr "L06 0U7"
@@ -1807,11 +1819,11 @@ msgstr "MU73 M3M8325"
 msgid "Mute Server"
 msgstr ""
 
-#: src/interface/navigation/servers/ServerList.tsx:235
+#: src/interface/navigation/servers/ServerList.tsx:245
 msgid "Muted"
 msgstr "MU73D"
 
-#: src/interface/navigation/servers/ServerList.tsx:237
+#: src/interface/navigation/servers/ServerList.tsx:247
 #: components/app/menus/ServerContextMenu.tsx:186
 #: components/app/menus/shared/NotificationContextMenu.tsx:43
 msgid "Muted until <0/>"
@@ -1829,7 +1841,7 @@ msgstr "MU7U4L 620UP5"
 msgid "My Account"
 msgstr "MY 4CC0UN7"
 
-#: components/app/interface/settings/UserSettings.tsx:177
+#: components/app/interface/settings/UserSettings.tsx:181
 msgid "My Bots"
 msgstr "MY 8075"
 
@@ -1892,6 +1904,7 @@ msgstr ""
 
 #: components/app/menus/ServerContextMenu.tsx:238
 #: components/app/menus/shared/NotificationContextMenu.tsx:95
+#: components/app/interface/settings/user/Accessibility.tsx:47
 msgid "Notifications"
 msgstr "N071F1C4710N5"
 
@@ -2057,7 +2070,7 @@ msgstr "P21V4CY P0L1CY"
 msgid "Private Channel"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:162
+#: components/app/interface/settings/UserSettings.tsx:166
 msgid "Profile"
 msgstr "P20F1L3"
 
@@ -2419,7 +2432,7 @@ msgstr "532V32 N4M3"
 msgid "Server Roles"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:167
+#: components/app/interface/settings/UserSettings.tsx:171
 msgid "Sessions"
 msgstr "535510N5"
 
@@ -2453,7 +2466,11 @@ msgid "Show corrections and suggestions as you type."
 msgstr ""
 
 #: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:392
-msgid "Show send message button"
+#~ msgid "Show send message button"
+#~ msgstr ""
+
+#: components/app/interface/settings/user/Accessibility.tsx:68
+msgid "Show unread conversations in server list"
 msgstr ""
 
 #: components/auth/src/flows/FlowLogin.tsx:57
@@ -2489,7 +2506,7 @@ msgstr ""
 msgid "Sounds"
 msgstr "50UND5"
 
-#: components/app/interface/settings/UserSettings.tsx:272
+#: components/app/interface/settings/UserSettings.tsx:276
 msgid "Source Code"
 msgstr "50U2C3 C0D3"
 
@@ -2549,7 +2566,7 @@ msgstr "5U8M17 F33D84CK"
 msgid "Submit to Discover"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:187
+#: components/app/interface/settings/UserSettings.tsx:191
 msgid "Subscriptions"
 msgstr ""
 
@@ -2814,7 +2831,7 @@ msgstr "U532 L3F7 C4LL"
 msgid "User Management"
 msgstr "U532 M4N463M3N7"
 
-#: components/app/interface/settings/UserSettings.tsx:151
+#: components/app/interface/settings/UserSettings.tsx:155
 msgid "User Settings"
 msgstr "U532 53771N65"
 
@@ -2863,7 +2880,7 @@ msgstr ""
 msgid "Verifying your account…"
 msgstr "V321FY1N6 Y0U2 4CC0UN7…"
 
-#: components/app/interface/settings/UserSettings.tsx:123
+#: components/app/interface/settings/UserSettings.tsx:127
 #: components/app/interface/settings/user/Native.tsx:151
 msgid "Version:"
 msgstr ""
@@ -2900,7 +2917,7 @@ msgstr "V13W 23C0V32Y C0D35"
 msgid "Viewing older messages"
 msgstr "V13W1N6 0LD32 M3554635"
 
-#: components/app/interface/settings/UserSettings.tsx:210
+#: components/app/interface/settings/UserSettings.tsx:214
 #: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:330
 msgid "Voice"
 msgstr ""

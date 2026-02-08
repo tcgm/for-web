@@ -268,6 +268,10 @@ msgstr ""
 msgid "Accept friend request"
 msgstr "Barátkérelem elfogadása"
 
+#: components/app/interface/settings/UserSettings.tsx:224
+msgid "Accessibility"
+msgstr ""
+
 #: components/modal/modals/PolicyChange.tsx:44
 msgid "Acknowledge"
 msgstr ""
@@ -310,7 +314,7 @@ msgstr ""
 msgid "Admin Panel"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:277
+#: components/app/interface/settings/UserSettings.tsx:281
 msgid "Advanced"
 msgstr "Speciális"
 
@@ -341,6 +345,10 @@ msgstr ""
 msgid "Already friends with this user."
 msgstr "Már ismerősöd ez a felhasználó."
 
+#: components/app/interface/settings/user/Accessibility.tsx:42
+msgid "Always show Send Message button"
+msgstr ""
+
 #: components/app/interface/settings/user/Language.tsx:143
 #: components/app/interface/settings/user/Language.tsx:163
 msgid "American (MM/DD/YYYY)"
@@ -355,7 +363,7 @@ msgstr ""
 msgid "An internal error occurred. ({0})"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:215
+#: components/app/interface/settings/UserSettings.tsx:219
 #: components/app/interface/settings/user/Sync.tsx:34
 msgid "Appearance"
 msgstr "Kinézet"
@@ -602,7 +610,7 @@ msgstr ""
 msgid "Channels"
 msgstr "Csatornák"
 
-#: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:380
+#: components/app/interface/settings/user/Accessibility.tsx:18
 msgid "Chat Input"
 msgstr ""
 
@@ -630,7 +638,7 @@ msgstr ""
 msgid "Click to show spoiler"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:198
+#: components/app/interface/settings/UserSettings.tsx:202
 msgid "Client Settings"
 msgstr "Kliens beállításai"
 
@@ -1013,7 +1021,7 @@ msgstr ""
 msgid "Description provided by {0}"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:252
+#: components/app/interface/settings/UserSettings.tsx:256
 msgid "Desktop"
 msgstr ""
 
@@ -1072,7 +1080,7 @@ msgstr ""
 msgid "Don't notify others that you've left"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:282
+#: components/app/interface/settings/UserSettings.tsx:286
 msgid "Donate"
 msgstr ""
 
@@ -1161,7 +1169,7 @@ msgstr "E-mail-cím"
 msgid "Emoji Name"
 msgstr ""
 
-#: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:396
+#: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:380
 msgid "Emoji Pack (affects your messages only)"
 msgstr ""
 
@@ -1240,7 +1248,7 @@ msgstr ""
 msgid "Failed to verify!"
 msgstr "Nem sikerült igazolnod a fiókodat."
 
-#: components/app/interface/settings/UserSettings.tsx:182
+#: components/app/interface/settings/UserSettings.tsx:186
 #: components/app/interface/settings/user/Feedback.tsx:75
 msgid "Feedback"
 msgstr "Visszajelzés"
@@ -1412,6 +1420,10 @@ msgstr ""
 msgid "Idle"
 msgstr "Nem csinál semmit"
 
+#: components/app/interface/settings/user/Accessibility.tsx:37
+msgid "If disabled, the Send Message button will only appear on mobile"
+msgstr ""
+
 #: components/modal/modals/ReportContent.tsx:66
 msgid "Illegal hacking or cracking"
 msgstr ""
@@ -1532,7 +1544,7 @@ msgstr ""
 msgid "Kick Members"
 msgstr "Kirúghatnak tagokat"
 
-#: components/app/interface/settings/UserSettings.tsx:241
+#: components/app/interface/settings/UserSettings.tsx:245
 #: components/app/interface/settings/user/Sync.tsx:52
 msgid "Language"
 msgstr "Nyelv"
@@ -1598,7 +1610,7 @@ msgstr ""
 msgid "Log In"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:291
+#: components/app/interface/settings/UserSettings.tsx:295
 #: components/app/interface/settings/user/Sessions.tsx:168
 msgid "Log Out"
 msgstr "Kijelentkezés"
@@ -1807,11 +1819,11 @@ msgstr "Tagok némítása"
 msgid "Mute Server"
 msgstr ""
 
-#: src/interface/navigation/servers/ServerList.tsx:235
+#: src/interface/navigation/servers/ServerList.tsx:245
 msgid "Muted"
 msgstr "Némítás"
 
-#: src/interface/navigation/servers/ServerList.tsx:237
+#: src/interface/navigation/servers/ServerList.tsx:247
 #: components/app/menus/ServerContextMenu.tsx:186
 #: components/app/menus/shared/NotificationContextMenu.tsx:43
 msgid "Muted until <0/>"
@@ -1829,7 +1841,7 @@ msgstr "Csoportjaink"
 msgid "My Account"
 msgstr "Fiók"
 
-#: components/app/interface/settings/UserSettings.tsx:177
+#: components/app/interface/settings/UserSettings.tsx:181
 msgid "My Bots"
 msgstr "Saját robik"
 
@@ -1892,6 +1904,7 @@ msgstr ""
 
 #: components/app/menus/ServerContextMenu.tsx:238
 #: components/app/menus/shared/NotificationContextMenu.tsx:95
+#: components/app/interface/settings/user/Accessibility.tsx:47
 msgid "Notifications"
 msgstr "Értesítések"
 
@@ -2057,7 +2070,7 @@ msgstr "Adatvédelmi szabályzat"
 msgid "Private Channel"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:162
+#: components/app/interface/settings/UserSettings.tsx:166
 msgid "Profile"
 msgstr "Profil"
 
@@ -2419,7 +2432,7 @@ msgstr "Szervernév"
 msgid "Server Roles"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:167
+#: components/app/interface/settings/UserSettings.tsx:171
 msgid "Sessions"
 msgstr "Munkamenetek"
 
@@ -2453,7 +2466,11 @@ msgid "Show corrections and suggestions as you type."
 msgstr ""
 
 #: components/app/interface/settings/user/appearance/AppearanceMenu.tsx:392
-msgid "Show send message button"
+#~ msgid "Show send message button"
+#~ msgstr ""
+
+#: components/app/interface/settings/user/Accessibility.tsx:68
+msgid "Show unread conversations in server list"
 msgstr ""
 
 #: components/auth/src/flows/FlowLogin.tsx:57
@@ -2489,7 +2506,7 @@ msgstr ""
 msgid "Sounds"
 msgstr "Hangos értesítés"
 
-#: components/app/interface/settings/UserSettings.tsx:272
+#: components/app/interface/settings/UserSettings.tsx:276
 msgid "Source Code"
 msgstr "Forráskód"
 
@@ -2549,7 +2566,7 @@ msgstr "Visszajelzés írása"
 msgid "Submit to Discover"
 msgstr ""
 
-#: components/app/interface/settings/UserSettings.tsx:187
+#: components/app/interface/settings/UserSettings.tsx:191
 msgid "Subscriptions"
 msgstr ""
 
@@ -2814,7 +2831,7 @@ msgstr "Felhasználó hívásból való távozásakor"
 msgid "User Management"
 msgstr "Felhasználók kezelése"
 
-#: components/app/interface/settings/UserSettings.tsx:151
+#: components/app/interface/settings/UserSettings.tsx:155
 msgid "User Settings"
 msgstr "Felhasználói beállítások"
 
@@ -2863,7 +2880,7 @@ msgstr ""
 msgid "Verifying your account…"
 msgstr "A fiókod igazolódik…"
 
-#: components/app/interface/settings/UserSettings.tsx:123
+#: components/app/interface/settings/UserSettings.tsx:127
 #: components/app/interface/settings/user/Native.tsx:151
 msgid "Version:"
 msgstr ""
@@ -2900,7 +2917,7 @@ msgstr "Helyreállító kódok megtekintése"
 msgid "Viewing older messages"
 msgstr "a régen írt üzeneteket látod"
 
-#: components/app/interface/settings/UserSettings.tsx:210
+#: components/app/interface/settings/UserSettings.tsx:214
 #: components/app/interface/settings/channel/permissions/ChannelPermissionsEditor.tsx:330
 msgid "Voice"
 msgstr ""
