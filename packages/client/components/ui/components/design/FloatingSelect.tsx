@@ -15,130 +15,6 @@ import { autoUpdate, flip, offset, shift, size } from "@floating-ui/dom";
 import { MenuItem } from "mdui/components/menu-item";
 import { styled } from "styled-system/jsx";
 
-const SelectTrigger = styled("button", {
-  base: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    width: "100%",
-    minHeight: "56px",
-    padding: "8px 16px",
-    borderRadius: "4px 4px 0 0",
-    border: "none",
-    borderBottom: "1px solid var(--md-sys-color-outline)",
-    background: "var(--md-sys-color-surface-container-highest)",
-    color: "var(--md-sys-color-on-surface)",
-    cursor: "pointer",
-    position: "relative",
-    textAlign: "left",
-    fontSize: "16px",
-    fontFamily: "inherit",
-    transition: "border-color 0.2s",
-
-    "&:hover": {
-      borderBottomColor: "var(--md-sys-color-on-surface)",
-    },
-
-    "&:focus": {
-      outline: "none",
-      borderBottomColor: "var(--md-sys-color-primary)",
-      borderBottomWidth: "2px",
-    },
-  },
-  variants: {
-    open: {
-      true: {
-        borderBottomColor: "var(--md-sys-color-primary)",
-        borderBottomWidth: "2px",
-      },
-    },
-    disabled: {
-      true: {
-        cursor: "not-allowed",
-        opacity: 0.38,
-      },
-    },
-  },
-});
-
-const SelectLabel = styled("label", {
-  base: {
-    position: "absolute",
-    transition: "ease-in-out 0.2s",
-    left: "16px",
-    color: "var(--md-sys-color-on-surface-variant)",
-    pointerEvents: "none",
-    transformOrigin: "left top",
-  },
-  variants: {
-    floating: {
-      true: {
-        top: "8px",
-        fontSize: "12px",
-        transform: "translateY(0)",
-      },
-      false: {
-        top: "50%",
-        fontSize: "16px",
-        transform: "translateY(-50%)",
-      },
-    },
-  },
-});
-
-const SelectValue = styled("span", {
-  base: {
-    flex: 1,
-    paddingTop: "16px",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    whiteSpace: "nowrap",
-  },
-});
-
-const DropdownMenu = styled("div", {
-  base: {
-    display: "flex",
-    flexDirection: "column",
-    maxHeight: "40vh",
-    overflowY: "auto",
-    scrollbarWidth: "none",
-    borderRadius: "4px",
-    background: "var(--md-sys-color-surface-container)",
-    color: "var(--md-sys-color-on-surface)",
-    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
-    padding: "8px 0",
-
-    "& mdui-menu-item": {
-      cursor: "pointer",
-      padding: "0px 0.75rem",
-      transition: "background 0.2s",
-      height: "3rem",
-
-      "&:hover": {
-        background:
-          "color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent)",
-      },
-    },
-  },
-});
-
-const ArrowIcon = styled("svg", {
-  base: {
-    width: "24px",
-    height: "24px",
-    fill: "var(--md-sys-color-on-surface-variant)",
-    transition: "transform 0.2s",
-  },
-  variants: {
-    open: {
-      true: {
-        transform: "rotate(180deg)",
-      },
-    },
-  },
-});
-
 type FloatingSelectProps = JSX.HTMLAttributes<HTMLButtonElement> & {
   value?: string;
   label?: string;
@@ -192,7 +68,7 @@ export function FloatingSelect(props: FloatingSelectProps) {
       flip(),
       shift({ padding: 8 }),
       size({
-        apply({ rects, elements }) {
+        apply({ rects, elements }: { rects: any; elements: any }) {
           Object.assign(elements.floating.style, {
             minWidth: `${rects.reference.width}px`,
           });
@@ -301,3 +177,127 @@ export function FloatingSelect(props: FloatingSelectProps) {
     </>
   );
 }
+
+const SelectTrigger = styled("button", {
+  base: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "100%",
+    minHeight: "56px",
+    padding: "8px 16px",
+    borderRadius: "4px 4px 0 0",
+    border: "none",
+    borderBottom: "1px solid var(--md-sys-color-outline)",
+    background: "var(--md-sys-color-surface-container-highest)",
+    color: "var(--md-sys-color-on-surface)",
+    cursor: "pointer",
+    position: "relative",
+    textAlign: "left",
+    fontSize: "16px",
+    fontFamily: "inherit",
+    transition: "border-color 0.2s",
+
+    "&:hover": {
+      borderBottomColor: "var(--md-sys-color-on-surface)",
+    },
+
+    "&:focus": {
+      outline: "none",
+      borderBottomColor: "var(--md-sys-color-primary)",
+      borderBottomWidth: "2px",
+    },
+  },
+  variants: {
+    open: {
+      true: {
+        borderBottomColor: "var(--md-sys-color-primary)",
+        borderBottomWidth: "2px",
+      },
+    },
+    disabled: {
+      true: {
+        cursor: "not-allowed",
+        opacity: 0.38,
+      },
+    },
+  },
+});
+
+const SelectLabel = styled("label", {
+  base: {
+    position: "absolute",
+    transition: "ease-in-out 0.2s",
+    left: "16px",
+    color: "var(--md-sys-color-on-surface-variant)",
+    pointerEvents: "none",
+    transformOrigin: "left top",
+  },
+  variants: {
+    floating: {
+      true: {
+        top: "8px",
+        fontSize: "12px",
+        transform: "translateY(0)",
+      },
+      false: {
+        top: "50%",
+        fontSize: "16px",
+        transform: "translateY(-50%)",
+      },
+    },
+  },
+});
+
+const SelectValue = styled("span", {
+  base: {
+    flex: 1,
+    paddingTop: "16px",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+  },
+});
+
+const DropdownMenu = styled("div", {
+  base: {
+    display: "flex",
+    flexDirection: "column",
+    maxHeight: "40vh",
+    overflowY: "auto",
+    scrollbarWidth: "none",
+    borderRadius: "4px",
+    background: "var(--md-sys-color-surface-container)",
+    color: "var(--md-sys-color-on-surface)",
+    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+    padding: "8px 0",
+
+    "& mdui-menu-item": {
+      cursor: "pointer",
+      padding: "0px 1.5rem",
+      transition: "background 0.2s",
+      height: "3rem",
+
+      "&:hover": {
+        background:
+          "color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent)",
+      },
+    },
+  },
+});
+
+const ArrowIcon = styled("svg", {
+  base: {
+    width: "24px",
+    height: "24px",
+    fill: "var(--md-sys-color-on-surface-variant)",
+    transition: "transform 0.2s",
+  },
+  variants: {
+    open: {
+      true: {
+        transform: "rotate(180deg)",
+      },
+    },
+  },
+});
