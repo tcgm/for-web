@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.3.0](https://github.com/stoatchat/for-web/compare/stoat-for-web-v0.2.1...stoat-for-web-v0.3.0) (2026-02-19)
+
+
+### Features
+
+* add button to rename categories ([#633](https://github.com/stoatchat/for-web/issues/633)) ([c3042a0](https://github.com/stoatchat/for-web/commit/c3042a094e4159705b176e4d312d9018cdcb97bb))
+* add delete bot button back to ViewBot component ([#808](https://github.com/stoatchat/for-web/issues/808)) ([64fd6af](https://github.com/stoatchat/for-web/commit/64fd6af7b7e2aeea76bc564025062ce73bef93e9))
+* Adds a Docker Build for the Web Client ([#697](https://github.com/stoatchat/for-web/issues/697)) ([6c5970f](https://github.com/stoatchat/for-web/commit/6c5970f9865b3bfb5cdbcfceb99676f1a40cc3b8))
+* make gifbox URL configurable via VITE_GIFBOX_URL env var ([#695](https://github.com/stoatchat/for-web/issues/695)) ([eeca7c9](https://github.com/stoatchat/for-web/commit/eeca7c903d3152a4dc176f652e52d89ce9763e36))
+
+
+### Bug Fixes
+
+* Preserve message ID in anchor links ([#714](https://github.com/stoatchat/for-web/issues/714)) ([4ad6990](https://github.com/stoatchat/for-web/commit/4ad69901e7cfca355d08c042ef52960fe5fe6cd1))
+* use correct start path for PWA ([#718](https://github.com/stoatchat/for-web/issues/718)) ([a113e21](https://github.com/stoatchat/for-web/commit/a113e2171224aa1938cd2b37793c43aa10397842))
+
 ## [0.2.1](https://github.com/stoatchat/for-web/compare/stoat-for-web-v0.2.0...stoat-for-web-v0.2.1) (2026-02-13)
 
 
