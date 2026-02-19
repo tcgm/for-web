@@ -28,7 +28,7 @@ import { KeybindContext } from "@revolt/keybinds";
 import { ModalContext, ModalRenderer, useModals } from "@revolt/modal";
 import { VoiceContext } from "@revolt/rtc";
 import { StateContext, SyncWorker, useState } from "@revolt/state";
-import { FloatingManager, LoadTheme } from "@revolt/ui";
+import { FloatingManager, LoadTheme, initPreventScrollJump } from "@revolt/ui";
 
 /* @refresh reload */
 import "@revolt/ui/styles";
@@ -45,6 +45,9 @@ import { ChannelPage } from "./interface/channels/ChannelPage";
 import "./serviceWorkerInterface";
 
 attachDevtoolsOverlay();
+
+// Initialize scroll jump prevention for dropdowns
+initPreventScrollJump();
 
 /**
  * Redirect PWA start to the last active path

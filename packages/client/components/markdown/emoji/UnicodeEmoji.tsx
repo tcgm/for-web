@@ -24,12 +24,12 @@ export const UNICODE_EMOJI_PACKS: UnicodeEmojiPacks[] = [
 ];
 
 export const UNICODE_EMOJI_PACK_PUA: Record<string, string> = {
-  // omit fluent-3d as it is the default (canonically \uE0E1)
+  // omit twemoji as it is the default (canonically \uE0E6)
+  "fluent-3d": "\uE0E1",
   "fluent-flat": "\uE0E2",
   mutant: "\uE0E3",
   noto: "\uE0E4",
   openmoji: "\uE0E5",
-  twemoji: "\uE0E6",
 };
 
 /**
@@ -44,7 +44,7 @@ export const UNICODE_EMOJI_MIN_PACK = "\uE0E0".codePointAt(0)!;
 export const UNICODE_EMOJI_MAX_PACK = "\uE0E6".codePointAt(0)!;
 
 export const UNICODE_EMOJI_PUA_PACK: Record<string, UnicodeEmojiPacks> = {
-  ["\uE0E0"]: "fluent-3d", // default entry
+  ["\uE0E0"]: "twemoji", // default entry
   ["\uE0E1"]: "fluent-3d",
   ["\uE0E2"]: "fluent-flat",
   ["\uE0E3"]: "mutant",
@@ -61,7 +61,7 @@ export const startsWithPackPUA = (emoji: string) => {
 };
 
 export function unicodeEmojiUrl(
-  pack: UnicodeEmojiPacks = "fluent-3d",
+  pack: UnicodeEmojiPacks = "twemoji",
   text: string,
 ) {
   return `https://static.stoat.chat/emoji/${pack}/${toCodepoint(text)}.svg?v=1`;

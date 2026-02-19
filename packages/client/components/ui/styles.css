@@ -136,3 +136,9 @@ body {
 .hljs-tag {
   /* purposely ignored */
 }
+
+/* Prevent scroll jumps when dropdowns open/close */
+html {
+  /* Reserve space for scrollbar to prevent layout shift */
+  scrollbar-gutter: stable;
+}

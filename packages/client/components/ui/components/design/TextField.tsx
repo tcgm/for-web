@@ -51,7 +51,34 @@ function Select(
     disabled?: boolean;
   },
 ) {
-  return <mdui-select {...props} />;
+  let ref: HTMLElement;
+
+  // Override scrollIntoView to prevent scroll jumping in Electron
+  const overrideScrollIntoView = (element: HTMLElement) => {
+    const originalScrollIntoView = element.scrollIntoView;
+    element.scrollIntoView = function (arg?: boolean | ScrollIntoViewOptions) {
+      if (typeof arg === "object") {
+        originalScrollIntoView.call(this, { ...arg, block: "nearest" });
+      } else {
+        originalScrollIntoView.call(this, { block: "nearest" });
+      }
+    };
+  };
+
+  return (
+    <mdui-select
+      {...props}
+      ref={(el) => {
+        ref = el;
+        overrideScrollIntoView(el);
+      }}
+      style={{
+        "scroll-margin-top": "0px",
+        "scroll-margin-bottom": "0px",
+        ...((props.style as Record<string, string>) || {}),
+      }}
+    />
+  );
 }
 
 /**

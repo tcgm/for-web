@@ -12,5 +12,6 @@ export { SizedContent } from "./SizedContent";
 export { Spacer } from "./Spacer";
 export { Spoiler } from "./Spoiler";
 export { Time, formatTime } from "./Time";
+export { initPreventScrollJump } from "./preventScrollJump";
 
 export * from "./files";
