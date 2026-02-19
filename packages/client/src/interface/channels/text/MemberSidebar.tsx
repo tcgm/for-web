@@ -326,7 +326,7 @@ export function GroupMemberSidebar(props: Props) {
 const Container = styled("div", {
   base: {
     paddingRight: "var(--gap-md)",
-    width: "var(--layout-width-channel-sidebar)",
+    width: "100%",
   },
 });
 

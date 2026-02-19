@@ -8,6 +8,7 @@ export { ListView } from "./ListView";
 export { NonBreakingText } from "./NonBreakingText";
 export { OverflowingText } from "./OverflowingText";
 export { PreviewStack } from "./PreviewStack";
+export { ResizablePanel } from "./ResizablePanel";
 export { SizedContent } from "./SizedContent";
 export { Spacer } from "./Spacer";
 export { Spoiler } from "./Spoiler";

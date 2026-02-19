@@ -101,7 +101,8 @@ export function SettingsSidebar(props: {
 const Base = styled("div", {
   base: {
     display: "flex",
-    flex: "1 0 218px",
+    width: "100%",
+    height: "100%",
     paddingLeft: "8px",
     justifyContent: "flex-end",
   },
@@ -112,8 +113,7 @@ const Base = styled("div", {
  */
 const Content = styled("div", {
   base: {
-    minWidth: "230px",
-    maxWidth: "300px",
+    width: "100%",
     padding: "74px 0 8px",
     display: "flex",
     gap: "2px",

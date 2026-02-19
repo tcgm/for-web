@@ -401,6 +401,6 @@ function Entry(
 const List = styled("div", {
   base: {
     paddingLeft: "var(--gap-md)",
-    width: "var(--layout-width-channel-sidebar)",
+    width: "100%",
   },
 });

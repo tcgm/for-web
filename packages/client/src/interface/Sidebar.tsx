@@ -12,6 +12,7 @@ import { useModals } from "@revolt/modal";
 import { useLocation, useParams, useSmartParams } from "@revolt/routing";
 import { useState } from "@revolt/state";
 import { LAYOUT_SECTIONS } from "@revolt/state/stores/Layout";
+import { ResizablePanel } from "@revolt/ui";
 
 import { HomeSidebar, ServerList, ServerSidebar } from "./navigation";
 
@@ -59,11 +60,19 @@ export const Sidebar = (props: {
           !location.pathname.startsWith("/discover")
         }
       >
-        <Switch fallback={<Home />}>
-          <Match when={params.server}>
-            <Server />
-          </Match>
-        </Switch>
+        <ResizablePanel
+          resizeFrom="right"
+          defaultWidth={240}
+          minWidth={180}
+          maxWidth={400}
+          storageKey="sidebar:primary:width"
+        >
+          <Switch fallback={<Home />}>
+            <Match when={params.server}>
+              <Server />
+            </Match>
+          </Switch>
+        </ResizablePanel>
       </Show>
     </div>
   );

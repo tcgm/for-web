@@ -22,6 +22,7 @@ import {
   BelowFloatingHeader,
   Header,
   NewMessages,
+  ResizablePanel,
   Text,
   TypingIndicator,
   main,
@@ -218,62 +219,71 @@ export function TextChannel(props: ChannelPageProps) {
             sidebarState().state !== "default"
           }
         >
-          <div
-            ref={sidebarScrollTargetElement}
-            use:scrollable={{
-              direction: "y",
-              showOnHover: true,
-              class: sidebar(),
-            }}
-            style={{
-              width: sidebarState().state !== "default" ? "360px" : "",
-            }}
+          <ResizablePanel
+            resizeFrom="left"
+            defaultWidth={sidebarState().state !== "default" ? 360 : 240}
+            minWidth={200}
+            maxWidth={500}
+            storageKey="sidebar:member:width"
           >
-            <Switch
-              fallback={
-                <MemberSidebar
-                  channel={props.channel}
-                  scrollTargetElement={sidebarScrollTargetElement}
-                />
-              }
+            <div
+              ref={sidebarScrollTargetElement}
+              use:scrollable={{
+                direction: "y",
+                showOnHover: true,
+                class: sidebar(),
+              }}
+              style={{
+                width: "100%",
+                height: "100%",
+              }}
             >
-              <Match when={sidebarState().state === "search"}>
-                <WideSidebarContainer>
-                  <SidebarTitle>
-                    <Text class="label" size="large">
-                      Search Results
-                    </Text>
-                  </SidebarTitle>
-                  <TextSearchSidebar
+              <Switch
+                fallback={
+                  <MemberSidebar
                     channel={props.channel}
-                    query={{
-                      query: (sidebarState() as { query: string }).query,
-                    }}
+                    scrollTargetElement={sidebarScrollTargetElement}
                   />
-                </WideSidebarContainer>
-              </Match>
-              <Match when={sidebarState().state === "pins"}>
-                <WideSidebarContainer>
-                  <SidebarTitle>
-                    <Text class="label" size="large">
-                      Pinned Messages
-                    </Text>
-                  </SidebarTitle>
-                  <TextSearchSidebar
-                    channel={props.channel}
-                    query={{ pinned: true, sort: "Latest" }}
-                  />
-                </WideSidebarContainer>
-              </Match>
-            </Switch>
+                }
+              >
+                <Match when={sidebarState().state === "search"}>
+                  <WideSidebarContainer>
+                    <SidebarTitle>
+                      <Text class="label" size="large">
+                        Search Results
+                      </Text>
+                    </SidebarTitle>
+                    <TextSearchSidebar
+                      channel={props.channel}
+                      query={{
+                        query: (sidebarState() as { query: string }).query,
+                      }}
+                    />
+                  </WideSidebarContainer>
+                </Match>
+                <Match when={sidebarState().state === "pins"}>
+                  <WideSidebarContainer>
+                    <SidebarTitle>
+                      <Text class="label" size="large">
+                        Pinned Messages
+                      </Text>
+                    </SidebarTitle>
+                    <TextSearchSidebar
+                      channel={props.channel}
+                      query={{ pinned: true, sort: "Latest" }}
+                    />
+                  </WideSidebarContainer>
+                </Match>
+              </Switch>
 
-            <Show when={sidebarState().state !== "default"}>
-              <Keybind
-                keybind={KeybindAction.CLOSE_SIDEBAR}
-                onPressed={() => setSidebarState({ state: "default" })}
-              />
-            </Show>
-          </div>
+              <Show when={sidebarState().state !== "default"}>
+                <Keybind
+                  keybind={KeybindAction.CLOSE_SIDEBAR}
+                  onPressed={() => setSidebarState({ state: "default" })}
+                />
+              </Show>
+            </div>
+          </ResizablePanel>
         </Show>
       </Content>
     </>
@@ -299,7 +309,8 @@ const Content = styled("div", {
 const sidebar = cva({
   base: {
     flexShrink: 0,
-    width: "var(--layout-width-channel-sidebar)",
+    width: "100%",
+    height: "100%",
     // margin: "var(--gap-md)",
     borderRadius: "var(--borderRadius-lg)",
     // color: "var(--colours-sidebar-channels-foreground)",
@@ -313,7 +324,7 @@ const sidebar = cva({
 const WideSidebarContainer = styled("div", {
   base: {
     paddingRight: "var(--gap-md)",
-    width: "360px",
+    width: "100%",
   },
 });
 

@@ -13,7 +13,8 @@ export const SidebarBase = styled("div", {
     borderBottomLeftRadius: "var(--borderRadius-lg)",
     // borderRadius: "var(--borderRadius-lg)",
     // margin: "var(--gap-md) var(--gap-md) var(--gap-md) 0",
-    width: "var(--layout-width-channel-sidebar)",
+    width: "100%",
+    height: "100%",
 
     fill: "var(--md-sys-color-on-surface)",
     color: "var(--md-sys-color-on-surface)",

@@ -11,6 +11,8 @@ import { Motion, Presence } from "solid-motionone";
 
 import { Rerun } from "@solid-primitives/keyed";
 
+import { ResizablePanel } from "@revolt/ui";
+
 import { SettingsConfiguration, SettingsEntry, SettingsList } from ".";
 import { SettingsContent } from "./_layout/Content";
 import { SettingsSidebar } from "./_layout/Sidebar";
@@ -92,7 +94,15 @@ export function Settings(props: SettingsProps & SettingsConfiguration<never>) {
       <MemoisedList context={props.context} list={props.list}>
         {(list) => (
           <>
-            <SettingsSidebar list={list} page={page} setPage={setPage} />
+            <ResizablePanel
+              resizeFrom="right"
+              defaultWidth={260}
+              minWidth={218}
+              maxWidth={400}
+              storageKey="sidebar:settings:width"
+            >
+              <SettingsSidebar list={list} page={page} setPage={setPage} />
+            </ResizablePanel>
             <SettingsContent
               page={page}
               list={list}
